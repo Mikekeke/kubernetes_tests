@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hs-depl
+  labels:
+    app: haskserv
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: haskserv
+  template:
+    metadata:
+      labels:
+        app: haskserv
+    spec:
+      # hostNetwork: true
+      containers:
+      - name: haskserv1
+        image: m282021/hsserv:no_port
+        # ports:
+        # - containerPort: 3001

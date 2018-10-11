@@ -1,0 +1,2 @@
+systemctl start kubelet.service
+systemctl stop kubelet.service
