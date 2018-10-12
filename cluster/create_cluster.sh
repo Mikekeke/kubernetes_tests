@@ -5,7 +5,11 @@ sudo systemctl start kubelet.service
 sudo swapoff -a 
 sudo kubeadm init --pod-network-cidr=192.168.0.0/16
 
-yes | sudo cp -i /etc/kubernetes/admin.conf ~/dev/projects/kube_pg/admin.conf
+# mkdir -p $HOME/.kube
+# sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+# sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+yes | sudo cp -i /etc/kubernetes/admin.conf ~/dev/projects/kubernetes_tests/admin.conf
 
 # make master avaiable to schedule pods
 ./kb.sh taint nodes --all node-role.kubernetes.io/master-

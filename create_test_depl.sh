@@ -1,4 +1,4 @@
 #!/bin/bash -x
 
+./kb.sh create -f ./test_depl_svc.yaml
 ./kb.sh create -f ./test_depl.yaml
-./kb.sh create -f ./dest_depl_svc.yaml
